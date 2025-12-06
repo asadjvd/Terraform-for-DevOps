@@ -1,6 +1,6 @@
 resource "aws_key_pair" "my_key" {
   key_name = "${var.env}-terra-key-ec2"
-  public_key = file("${var.env}-terra-key-ec2.pub")
+  public_key = file("terra-key-ec2.pub")
 }
 
 resource "aws_default_vpc" "default" {
