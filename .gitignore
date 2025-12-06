@@ -1,0 +1,44 @@
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Ignore override files as they are not meant to be committed
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable files (commonly used)
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+
+# Terraform plan output
+*.plan
+
+# Auto-generated lock file (you may keep it if using Terraform >=0.14)
+.terraform.lock.hcl
+
+# Provider plugins (downloaded locally)
+.terraform/plugins/
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+terra-key-ec2
+terra-key-ec2.pub
+Workspace.code-workspace
