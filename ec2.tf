@@ -1,6 +1,9 @@
 resource "aws_key_pair" "my_key" {
-  key_name = "terra-key-ec2"
+  key_name = "${var.env}terra-key-ec2"
   public_key = file("terra-key-ec2.pub")
+  tags = {
+    Environment = var.env
+  }
 }
 
 resource "aws_default_vpc" "default" {
@@ -8,7 +11,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_security_group" "my_security_group" {
-    name = "automate-sg"
+    name = "${var.env}-automate-sg"
     description = "This will add a TF generated SG"
     vpc_id = aws_default_vpc.default.id #interpolation and it means it is a way in which you can inherit or extract values from a TF block
     
@@ -45,7 +48,8 @@ resource "aws_security_group" "my_security_group" {
     }
 
     tags = {
-        Name = "automate-sg"
+        Name = "${var.env}-automate-sg"
+        Environment = var.env
     }
 }
 
@@ -67,6 +71,7 @@ resource "aws_instance" "my_instance" {
 
     tags = {
         Name = each.key
+        Environment = var.env
     }
 }
 
