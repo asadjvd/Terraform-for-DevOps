@@ -49,6 +49,7 @@ resource "aws_security_group" "my_security_group" {
 
     tags = {
         Name = "${var.env}-automate-sg"
+        Environment = var.env
     }
 }
 
