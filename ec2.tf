@@ -51,8 +51,7 @@ resource "aws_security_group" "my_security_group" {
 
 resource "aws_instance" "my_instance" {
     for_each = tomap({
-        TF-automate-micro1 = "t2.micro"
-        TF-automate-micro2 = "t2.micro"
+        TF-automate-micro = "t2.micro"
     })
     depends_on = [ aws_security_group.my_security_group, aws_key_pair.my_key ]
     key_name = aws_key_pair.my_key.key_name  
