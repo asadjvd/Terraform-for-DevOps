@@ -1,0 +1,5 @@
+# For illustration purpose only, not actively used!
+
+bucket = "tf-course-lm-aj-remote-backend"
+key = "04-backends/dev/state.tfstate"
+region = "us-east-1"
