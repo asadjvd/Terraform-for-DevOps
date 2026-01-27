@@ -16,6 +16,7 @@ terraform.rc
 
 # OS
 .DS_Store
+.aws/
 aws/
 awscliv2.zip
 .env
